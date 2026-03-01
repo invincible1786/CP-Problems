@@ -18,12 +18,12 @@
                 x = abs(x);
 
                 if(x>check) la++;
-                else sm--;
+                else sm++;
             }  
             if(n%2 == 0) limit = n/2;
             else limit = (n+1)/2;
 
-            if(limit-sm > 0) cout << "YES" << endl;
+            if(limit-sm > 0 || (limit-1 <= la)) cout << "YES" << endl;
             else cout << "NO" << endl;
         }
     }
