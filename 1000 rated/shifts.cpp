@@ -1,4 +1,4 @@
-// link -> https://codeforces.com/problemset/problem/2188/B
+// link -> https://codeforces.com/problemset/problem/2176/B
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,7 +22,7 @@ int main(){
                 init++;
             }
         }
-        for(int i=n-1;i>=0; i++){
+        for(int i=n-1;i>=0; i--){
             if(s[i] == '1') {
                 l = i;
                 break;
@@ -31,7 +31,7 @@ int main(){
                 init++;
             }
         }
-        for(int i=f; i<l; i++){
+        for(int i=f; i<=l; i++){
             if(s[i] == '1'){
                 maxi = max(maxi,mid);
                 mid = 0;
@@ -40,6 +40,6 @@ int main(){
                 mid += 1; 
             }
         }
-        cout << "ans =>" <<  max(maxi,init) << endl;
+        cout << max(maxi,init) << endl;
     }
 }   
