@@ -1,45 +1,28 @@
-// link -> https://codeforces.com/problemset/problem/2188/B
-
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(){
-    int t; 
+    int t;
     cin >> t;
     while(t--){
-        int n;
-        cin >> n;
+        int n, q;
+        cin >> n >> q;
         string s;
         cin >> s;
-        int init = 0, mid = 0, maxi = -1;
-        int f = 0, l = 0;
-        for(int i=0; i<n; i++){
-            if(s[i] == '1'){
-                f = i;
-                break;
+        for(int i=0; i<q; i++){
+            int x, j=0, t=0;
+            cin >> x;
+            while(x!=0){
+                if(s[j%q] == 'A'){
+                    x -= 1;
+                }
+                else{
+                    x = floor(x/2);
+                }
+                t += 1;
+                j += 1;
             }
-            else{
-                init++;
-            }
+            cout << t << endl;
         }
-        for(int i=n-1;i>=0; i++){
-            if(s[i] == '1') {
-                l = i;
-                break;
-            }
-            else{
-                init++;
-            }
-        }
-        for(int i=f; i<l; i++){
-            if(s[i] == '1'){
-                maxi = max(maxi,mid);
-                mid = 0;
-            }
-            else{
-                mid += 1; 
-            }
-        }
-        cout << "ans =>" <<  max(maxi,init) << endl;
     }
-}   
+}

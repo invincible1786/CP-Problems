@@ -13,6 +13,7 @@ int main(){
         string s;
         cin >> n >> s;
         if(n==1 && s[0]=='0') cout << 1 << endl;
+
         else{
             for(int i=0; i<s.size(); i++){
 
@@ -32,6 +33,10 @@ int main(){
                 ans += 1;
                 flag = false;
             }
+        }
+
+        if(zeroes == n){
+            if(zeroes == 2)
         }
 
         if(zeroes%2 == 1 || zeroes == 2){
